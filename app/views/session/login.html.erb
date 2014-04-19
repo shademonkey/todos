@@ -1,0 +1,26 @@
+<div id="login" class="container">
+  <% if flash[:success] %>
+    <div class="alert alert-success">
+      <%= flash[:success] %>
+    </div>
+  <% end %>
+
+  <h1>Login</h1>
+
+  <% if flash[:error] %>
+    <ul class="alert alert-danger">
+      <li><%= flash[:error] %></li>
+    </ul>
+  <% end %>
+
+  <%= form_tag '/authenticate' do %>
+    <div class="form-group">
+      <%= label_tag :email %>
+      <%= text_field_tag :email, nil, class: "form-control"%>
+    </div>
+    <div class="form-group">
+      <%= label_tag :password %>
+      <%= password_field_tag :password, nil, class: "form-control" %>
+    </div>
+    <button type="submit" class="btn btn-default">Login</button>
+  <% end %>

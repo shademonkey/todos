@@ -10,7 +10,6 @@ class UserTest < ActiveSupport::TestCase
     @user.password = "1234"
     @user.password_confirmation = "1234"
     assert_not @user.save
-    puts @user.errors.full_messages
   end
   
   test "requires password" do
