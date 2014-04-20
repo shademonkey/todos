@@ -81,6 +81,11 @@ $ ->
       parent.removeClass("active")
       parent.find(".info").show()
       parent.find(".form").hide()
+      title = parent.find(".list-group-item-heading").html()
+      description = parent.find(".list-group-item-text").html()
+
+      parent.find(".title").val(title)
+      parent.find(".description").val(description)
     else
       parent.remove()
 
