@@ -1,4 +1,11 @@
 <div id="home-page" class="container">
+  
+  <% if flash[:success] %>
+    <div class="alert alert-success">
+      <%= flash[:success] %>
+    </div>
+  <% end %>
+
   <h1>What is Todos?</h1>
   <p>Todos is a simple to use application that allows you to manage your time better.</p>
   <p>Simply create an account and get going!</p>

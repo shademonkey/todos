@@ -5,6 +5,12 @@
     </div>
   <% end %>
 
+  <% if flash[:warning] %>
+    <div class="alert alert-warning">
+      <%= flash[:warning] %>
+    </div>
+  <% end %>
+
   <h1>Login</h1>
 
   <% if flash[:error] %>

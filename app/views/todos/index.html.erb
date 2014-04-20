@@ -6,5 +6,64 @@
     </div>
   <% end %>
   
-  <h1>Todos</h1>  
+  <h1>Todos</h1> 
+  <div id="plus-control">
+    <span class="fa fa-plus"></span>
+    <span class="filter">Show all</span>
+  </div>
+  <div class="list-group">
+    <% @todos.each do |todo| %> 
+      <div class="list-group-item" data-id="<%= todo.id %>">
+        <div class="info">
+          <% if todo.completed %>
+            <span class="check fa fa-check-square-o"></span>
+          <% else %>
+            <span class="check fa fa-square-o"></span>
+          <% end %>
+          <h4 class="list-group-item-heading"><%= todo.title %></h4>
+          <p class="list-group-item-text"><%= todo.description %></p>
+          <span class="edit fa fa-pencil"></span>
+          <span class="delete fa fa-trash-o"></span>
+        </div>
+        <div class="form" style="display: none;">
+          <ul class="errors alert alert-danger">
+          </ul>
+          <div class="form-group">
+            <input class="form-control title" placeholder="Title" value="<%= todo.title %>"/>
+          </div>
+          <div class="form-group">
+            <textarea class="form-control description" placeholder="Description"><%= todo.description %></textarea>
+          </div>  
+          <div class="form-group">
+            <button class="submit btn btn-default">Submit</button>
+            <button class="cancel btn btn-default">Cancel</button>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="todo-clone list-group-item active">
+    <div class="info" style="hidden">
+      <span class="check fa fa-square-o"></span>
+      <h4 class="list-group-item-heading"></h4>
+      <p class="list-group-item-text"></p>
+      <span class="edit fa fa-pencil"></span>
+      <span class="delete fa fa-trash-o"></span>
+    </div>
+    <div class="form">
+      <ul class="errors alert alert-danger">
+      </ul>
+      <div class="form-group">
+        <input class="form-control title" placeholder="Title" />
+      </div>
+      <div class="form-group">
+        <textarea class="form-control description" placeholder="Description"></textarea>
+      </div>  
+      <div class="form-group">
+        <button class="submit" class="btn btn-default">Submit</button>
+        <button class="cancel" class="btn btn-default">Cancel</button>
+      </div>
+    </div>
+  </div>
 </div>

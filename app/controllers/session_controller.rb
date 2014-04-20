@@ -5,6 +5,7 @@ class SessionController < ApplicationController
       # subsequent requests
       puts user.inspect
       session[:current_user_id] = user.id
+      current_user
       flash[:success] = "Successfully logged in"
       redirect_to todos_path
     else
@@ -16,8 +17,9 @@ class SessionController < ApplicationController
   def login
   end
 
-  def logout
+  def destroy
     session[:current_user_id] = nil
+    @current_user = nil
     flash[:success] = "Successfully logged out"
     redirect_to home_path
   end
