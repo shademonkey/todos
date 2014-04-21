@@ -1,0 +1,14 @@
+<header>
+  <div class="container">
+    <span id="logo">Todos</span>
+    <ul id="top-nav">
+      <li><%= link_to "Home", home_path %></li>
+      <% if @current_user %>
+        <li><%= link_to "Logout", logout_path %></li>
+      <% else %>
+        <li><%= link_to "Register", new_user_path %></li>
+        <li><%= link_to "Login", login_path %></li>
+      <% end %>
+    </ul>
+  </div>
+</header>
