@@ -4,9 +4,74 @@
 #todos-index
 {
   padding-top: 30px;
+  width: 600px;
 
   h1
   {
     color: #133aac;
+  }
+
+  .fa-plus, .fa-trash-o, .fa-pencil, .fa-square-o, .fa-check-square-o, .filter
+  {
+    font-size: 14pt;
+    cursor: pointer;
+    color: #689ad3;
+  }
+
+  .errors
+  {
+    display: none;
+  }
+
+  .fa-plus:hover, .fa-trash-o:hover, .fa-pencil:hover, .fa-square-o:hover,
+  .fa-check-square-o:hover, .filter:hover
+  {
+    color: #133aac;
+  }
+
+  .fa-trash-o
+  {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+
+  .fa-pencil
+  {
+    position: absolute;
+    top: 10px;
+    right: 35px;
+  }
+
+  .fa-square-o, .fa-check-square-o
+  {
+    float: left;
+    margin-right: 10px;
+  }
+
+  textarea
+  {
+    resize: none;
+  }
+
+  .todo-clone
+  {
+    display: none;
+  }
+
+  #plus-control
+  {
+    margin-bottom: 20px;
+  }
+
+  .list-group-item
+  {
+    position: relative;
+  }
+
+  .filter
+  {
+    float: right;
+    cursor: pointer;
   }
 }
