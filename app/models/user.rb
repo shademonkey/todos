@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   has_many :todos
   has_secure_password
   validates :email, presence: true
+  validates :email, uniqueness: true
 
   def self.authenticate email, password
     user = User.find_by_email email
